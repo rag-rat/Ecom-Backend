@@ -90,14 +90,14 @@ RUN mkdir -p logs
 
 # Tell Docker which port this container listens on (documentation
 # only — actual port mapping happens in docker-compose or docker run)
-EXPOSE 9092
+EXPOSE 8080
 
 
 # Health check — Docker uses this to determine if the container
 # is "healthy" and ready to receive traffic. Matches the
 # /actuator/health endpoint we enabled in Part 2's application.yml
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
-    CMD wget -qO- http://localhost:9092/actuator/health || exit 1
+    CMD wget -qO- http://localhost:8080/actuator/health || exit 1
 
 
 
