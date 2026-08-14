@@ -51,8 +51,8 @@ COPY pom.xml .
 
 
 # Download all dependencies (cached separately from source code)
-RUN ./mvnw dependency:go-offline -B
-
+# RUN ./mvnw dependency:go-offline -B
+RUN chmod +x mvnw && ./mvnw dependency:go-offline -B
 
 # Now copy the actual source code
 COPY src ./src
@@ -60,8 +60,8 @@ COPY src ./src
 
 # Build the fat jar, skipping tests (tests run in CI pipeline,
 # not during Docker image build, to keep build times fast)
-RUN ./mvnw clean package -DskipTests -B
-
+# RUN ./mvnw clean package -DskipTests -B
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests -B
 
 
 # ─────────────────────────────────────────────────────────────
