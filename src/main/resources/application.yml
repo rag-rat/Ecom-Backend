@@ -197,11 +197,11 @@ app:
     # Frontend URL — where to redirect after OAuth success/failure
     # This is where Spring sends the JWT tokens after successful login
 
-    oauth2:
-      authorized-redirect-uris: ${OAUTH2_REDIRECT_URIS}
-      # How long the OAuth2 state cookie lives (10 minutes is more than enough
-      # for a user to complete the Google/GitHub login flow)
-      cookie-expire-seconds: 600
+  oauth2:
+    authorized-redirect-uris: ${OAUTH2_REDIRECT_URIS}
+    # How long the OAuth2 state cookie lives (10 minutes is more than enough
+    # for a user to complete the Google/GitHub login flow)
+    cookie-expire-seconds: 600
 
 
 logging:
