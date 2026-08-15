@@ -30,10 +30,10 @@ jobs:
           cache: maven
 
       - name: Run tests
-        run: ./mvnw test
+        run: chmod +x mvnw && ./mvnw test
 
       - name: Build JAR
-        run: ./mvnw clean package -DskipTests -B
+        run: chmod +x mvnw && ./mvnw clean package -DskipTests -B
 
 
       - name: Log in to GHCR
