@@ -6,13 +6,39 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 
 
+//@Configuration
+//public class KafkaConfig {
+//
+//    @Bean
+//    public NewTopic orderCreatedTopic() {
+//        return TopicBuilder.name("order-created")
+//                .partitions(3)
+//                .replicas(1)
+//                .build();
+//    }
+//
+//    @Bean
+//    public NewTopic paymentSuccessTopic() {
+//        return TopicBuilder.name("payment-success")
+//                .partitions(3)
+//                .replicas(1)
+//                .build();
+//    }
+//
+//}
+
+
+
+
+////////////////////// for deployment
+
 @Configuration
 public class KafkaConfig {
 
     @Bean
     public NewTopic orderCreatedTopic() {
         return TopicBuilder.name("order-created")
-                .partitions(3)
+                .partitions(2)
                 .replicas(1)
                 .build();
     }
@@ -20,7 +46,7 @@ public class KafkaConfig {
     @Bean
     public NewTopic paymentSuccessTopic() {
         return TopicBuilder.name("payment-success")
-                .partitions(3)
+                .partitions(2)
                 .replicas(1)
                 .build();
     }
