@@ -36,6 +36,9 @@ management:
     health:
       show-details: never
 
+      mail:
+        enabled: false
+
 
 logging:
   level:
