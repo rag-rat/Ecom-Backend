@@ -36,8 +36,9 @@ management:
     health:
       show-details: never
 
-      mail:
-        enabled: false
+  health:
+    mail:
+      enabled: false
 
 
 logging:
