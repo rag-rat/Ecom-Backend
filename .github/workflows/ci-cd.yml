@@ -50,3 +50,7 @@ jobs:
 
           docker build -t $IMAGE .
           docker push $IMAGE
+          
+
+      - name: Trigger Render deployment
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
