@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 
@@ -36,8 +37,12 @@ public class Conversation extends BaseEntity {
     @Field("last_message_preview")
     private String lastMessagePreview;
 
+//    @Field("last_message_at")
+//    private LocalDateTime lastMessageAt;
+
+
     @Field("last_message_at")
-    private LocalDateTime lastMessageAt;
+    private Instant lastMessageAt;
 
 
     /*

@@ -16,6 +16,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -63,7 +64,7 @@ public class ChatService {
 
 
         conversation.setLastMessagePreview(truncate(content));
-        conversation.setLastMessageAt(LocalDateTime.now());
+        conversation.setLastMessageAt(Instant.now());
         conversation.setUnreadByAdmin(conversation.getUnreadByAdmin() + 1);
         conversationRepository.save(conversation);
 
@@ -108,7 +109,7 @@ public class ChatService {
         Message saved = messageRepository.save(message);
 
         conversation.setLastMessagePreview(truncate(content));
-        conversation.setLastMessageAt(LocalDateTime.now());
+        conversation.setLastMessageAt(Instant.now());
         conversation.setUnreadByCustomer(conversation.getUnreadByCustomer() + 1);
 
         conversationRepository.save(conversation);
