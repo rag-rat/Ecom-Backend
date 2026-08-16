@@ -3,6 +3,7 @@ package com.ecom.chat.dto;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 
@@ -15,7 +16,8 @@ public class ConversationResponse {
     private String customerName;
     private String status;
     private String lastMessagePreview;
-    private LocalDateTime lastMessageAt;
+//    private LocalDateTime lastMessageAt;
+    private Instant lastMessageAt;
     private int unreadCount; // resolved to whichever side is viewing — see service
 
 }
