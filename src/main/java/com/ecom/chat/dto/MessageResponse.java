@@ -4,6 +4,7 @@ package com.ecom.chat.dto;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,7 +17,7 @@ public class MessageResponse {
     private String receiverId;
     private String message;
     private boolean readStatus;
-    private LocalDateTime createdAt;
+    private Instant createdAt;
 
 }
 

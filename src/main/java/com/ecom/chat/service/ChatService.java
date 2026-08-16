@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 
 
@@ -242,7 +243,9 @@ public class ChatService {
                 .receiverId(message.getReceiverId())
                 .message(message.getMessage())
                 .readStatus(message.isReadStatus())
-                .createdAt(message.getCreatedAt())
+                .createdAt(message.getCreatedAt()
+                        .atZone(ZoneId.systemDefault())
+                        .toInstant())
                 .build();
     }
 }
